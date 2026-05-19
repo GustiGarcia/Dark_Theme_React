@@ -6,8 +6,10 @@ export const AppProvider = ({ children }) => {
     const [darkMode, setDarkMode] = useState(false);
 
     const tema = {
-        backgroundColor: darkMode ? "#333" : "#fff",
-        color: darkMode ? "#fff" : "#333",
+        // Si darkMode es true, usa gris oscuro. Si es false, usa blanco.
+        fondo: darkMode ? "#242424" : "#ffffff",
+        // Si darkMode es true, el texto es blanco. Si es false, es oscuro.
+        texto: darkMode ? "#ffffff" : "#242424"
     };
 
     return (

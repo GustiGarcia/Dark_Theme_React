@@ -1,42 +1,22 @@
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext"; // Asegurate de verificar bien tu ruta de carpetas
+// Importamos la "estación de radio" (el contexto)
+import { AppContext } from "../context/AppContext";
 
-function Navbar() {
-  // Sintonizamos la señal de nuestro contexto global
+const Navbar = () => {
+  // Sintonizamos el contexto para extraer lo que necesitamos
   const { darkMode, setDarkMode, tema } = useContext(AppContext);
 
   return (
-    <nav
-      style={{
-        backgroundColor: tema.background,
-        color: tema.text,
-        padding: "1rem",
-        display: "flex",
-        justifyContent: "between",
-        alignItems: "center",
-        borderBottom: `1px solid ${darkMode ? "#333" : "#ccc"}`,
-        transition: "all 0.3s ease", // Para que el cambio de color sea suave
-      }}
-    >
-      <h2>Mi App Global</h2>
+    // Aplicamos los colores globales al estilo del Navbar
+    <nav style={{ backgroundColor: tema.fondo, color: tema.texto, padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <h2>Mi Proyecto React</h2>
       
-      {/* Botón que alterna el estado booleano entre true y false */}
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        style={{
-          backgroundColor: darkMode ? "#fff" : "#333",
-          color: darkMode ? "#333" : "#fff",
-          border: "none",
-          padding: "0.5rem 1rem",
-          cursor: "pointer",
-          borderRadius: "5px",
-          fontWeight: "bold",
-        }}
-      >
-        {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+      {/* Botón que invierte el valor actual del Dark Mode */}
+      <button onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? "☀️ Cambiar a Claro" : "🌙 Cambiar a Oscuro"}
       </button>
     </nav>
   );
-}
+};
 
 export default Navbar;

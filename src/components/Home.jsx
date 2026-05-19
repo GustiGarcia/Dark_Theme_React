@@ -8,8 +8,8 @@ function Home() {
   return (
     <main
       style={{
-        backgroundColor: tema.background,
-        color: tema.text,
+        backgroundColor: tema.fondo,
+        color: tema.texto,
         minHeight: "70vh", // Para que ocupe buen espacio entre el navbar y el footer
         padding: "2rem",
         textAlign: "center",
