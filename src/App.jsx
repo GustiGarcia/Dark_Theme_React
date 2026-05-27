@@ -1,14 +1,18 @@
 import AppProvider from "./context/AppContext";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Footer from "./components/Footer"; // El que armamos en el paso anterior
+import Footer from "./components/Footer";
+import { AppContext } from "./context/AppContext";
+import { useContext } from "react";
 
 function App() {
   return (
     <AppProvider>
-      <Navbar />
-      <Home />
-      <Footer />
+      <div>
+        <Navbar />
+        <Home />
+        <Footer />
+      </div>
     </AppProvider>
   );
 }

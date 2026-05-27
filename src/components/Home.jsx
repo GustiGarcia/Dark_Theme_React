@@ -4,6 +4,11 @@ import { AppContext } from "../context/AppContext";
 function Home() {
   // Traemos los estilos del tema global
   const { tema } = useContext(AppContext);
+  const { contador,setContador } = useContext(AppContext);
+
+  const sumar = () => {
+    setContador(contador + 1);
+  };
 
   return (
     <main
@@ -21,6 +26,12 @@ function Home() {
         Este componente está escuchando de forma global si el Dark Mode está
         activo o no, adaptando sus estilos al instante sin recibir props.
       </p>
+      <div>
+      <p>Contador: {contador}</p>
+
+      <button onClick={sumar}>
+        +1
+      </button></div>
     </main>
   );
 }

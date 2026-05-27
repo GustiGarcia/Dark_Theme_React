@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { use, useContext } from "react";
 // Importamos la "estación de radio" (el contexto)
 import { AppContext } from "../context/AppContext";
 
 const Navbar = () => {
   // Sintonizamos el contexto para extraer lo que necesitamos
   const { darkMode, setDarkMode, tema } = useContext(AppContext);
+  const {contador} =useContext(AppContext);
 
   return (
     // Aplicamos los colores globales al estilo del Navbar
@@ -15,6 +16,7 @@ const Navbar = () => {
       <button onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? "☀️ Cambiar a Claro" : "🌙 Cambiar a Oscuro"}
       </button>
+      <p>Contador: {contador}</p>
     </nav>
   );
 };

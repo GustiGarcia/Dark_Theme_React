@@ -4,6 +4,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
     const [darkMode, setDarkMode] = useState(false);
+    const [contador, setContador] = useState(0);
 
     const tema = {
         // Si darkMode es true, usa gris oscuro. Si es false, usa blanco.
@@ -13,7 +14,7 @@ export const AppProvider = ({ children }) => {
     };
 
     return (
-        <AppContext.Provider value={{ darkMode, setDarkMode, tema }}>
+        <AppContext.Provider value={{ darkMode, setDarkMode, tema ,contador, setContador}}>
             {children}
         </AppContext.Provider>
     );
