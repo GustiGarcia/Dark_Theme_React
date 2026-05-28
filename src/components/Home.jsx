@@ -5,10 +5,12 @@ function Home() {
   // Traemos los estilos del tema global
   const { tema } = useContext(AppContext);
   const { contador,setContador } = useContext(AppContext);
-
   const sumar = () => {
     setContador(contador + 1);
   };
+  const {usuario,setUsuario} = useContext(AppContext);
+  const login = useContext(AppContext).login;
+  const logout = useContext(AppContext).logout;
 
   return (
     <main
@@ -28,6 +30,13 @@ function Home() {
       </p>
       <div>
       <p>Contador: {contador}</p>
+
+      <p>Usuario: {usuario}</p>
+      <button onClick={login}>Login</button>
+      <br />
+      <button onClick={logout}>LogOut</button>
+
+      <br />
 
       <button onClick={sumar}>
         +1
